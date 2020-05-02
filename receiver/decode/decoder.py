@@ -10,7 +10,16 @@ class decoder:
 
   def decode(self):
 
-    #Reading the stego image
+    '''
+    Prints the decoded message.
+
+    Parameter:
+      None
+    
+    Returns:
+      None.
+    '''
+    
     r = png.Reader(filename = "../received/stegoImage.png")
     height, width, pngdata, meta = r.asDirect()
     image_2d = np.stack(map(np.uint8, pngdata))

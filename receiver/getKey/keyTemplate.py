@@ -5,7 +5,7 @@ class keyTemplate:
   
   def getTemplate(self, data):
     '''
-    Returns a formatted string to be written in ../output/key.py
+    Returns a formatted string to be written in key.py
 
     Parameters:
       data  - a list of exceptions
