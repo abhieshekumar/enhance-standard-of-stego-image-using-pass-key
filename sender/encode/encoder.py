@@ -13,14 +13,14 @@ class encoder:
   
   def encodeMessage(self):
     '''
-    Encodes the message from ../message.py to ../privateImage.py and generates the stegoImage along with the relevant key.
+    Encodes the message from message.py to privateImage.png and generates the stegoImage along with the relevant key.
 
     Parameters:
       None
     
     Returns:
-      (stegoImage.png) - stego.png stored in ../output/stegoImage.png
-      (key.py)         - a key of exceptions. It is also stored in ../output/key.py
+      (stegoImage.png) - stego.png
+      (key.py)         - a key of exceptions.
     '''
 
     privateImageObj = privateImage()
