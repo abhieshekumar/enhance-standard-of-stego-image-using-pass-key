@@ -1,6 +1,6 @@
-# ./Encode
+# sender/Encode
 
-* *Encoder.py* -  It is the image which has been to generate the cover image and the key image.
-* *Path.py* - Helps importing files from other directories.
-* *KeyTemplate.py* - Generates the template to write key.
-* *Run.py* - The entry point for the directory.
+* *encoder.py* -  It is used to generate cover image and the key using the private image and message.
+* *path.py* - Helps importing files from other directories.
+* *keyTemplate.py* - Generates the template to write key.
+* *run.py* - The entry point used for execution.
