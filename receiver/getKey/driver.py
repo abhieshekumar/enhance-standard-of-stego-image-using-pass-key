@@ -17,7 +17,15 @@ class driver:
     pass
 
   def driver(self):
+    '''
+    Executes the other scripts in the folder in a specific order to return the key.
 
+    Parameters:
+      None
+    
+    Returns:
+      None. But it writes the key in key.py
+    '''
     privateImageObj = privateImage()
     image = np.copy(privateImageObj.getPrivateImage())
     height = privateImageObj.getPrivateImageHeight()
