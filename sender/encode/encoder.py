@@ -30,7 +30,9 @@ class encoder:
 
     objMessage = message()
     msg = objMessage.getMessage()
+    msg = msg + '\0'
     msgLen = objMessage.getMessageLength()
+    msgLen = msgLen + 1
 
     objKeyTemplate = keyTemplate()
 

@@ -51,3 +51,27 @@ class privateImage:
     r = png.Reader(filename = "../asset/privateImage.png")
     row_count, column_count, pngdata, meta = r.asDirect()
     return row_count
+  
+  def getPrivateImageLevels(self):
+    '''
+    Returns the possible values that can take a pixel value in the private image
+
+    Parameters:
+      None
+    
+    Returns:
+      (int) - pixel values that can be used
+    '''
+    return 256
+
+  def getTolerance(self):
+    '''
+    Returns the tolerance value used in flat.py
+
+    Parameters:
+      None
+    
+    Returns:
+      (double) - returns the tolerance value
+    '''
+    return 0.5
