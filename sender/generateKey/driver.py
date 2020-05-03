@@ -14,41 +14,71 @@ class driver:
   def __init__(self):
     pass
 
-  def driver(self):
+  def driver(self, decorator = None):
     '''
     Executes the other scripts in the folder in a specific order to return the key.
 
     Parameters:
-      None
+      decorator : It specifies whether to plot histogram and show images during execution.
     
     Returns:
       None. But it writes the key in key.py
     '''
+
+    if decorator:
+      from matplotlib import pyplot as plt
+
+    if decorator == 'histogram':
+      fig, axs = plt.subplots(5, num="Histogram for Sender")
+      binSize = [x for x in range(256)]
+
     privateImageObj = privateImage()
     image = np.copy(privateImageObj.getPrivateImage())
     height = privateImageObj.getPrivateImageHeight()
     width = privateImageObj.getPrivateImageWidth()
+    if decorator == 'histogram':
+      temp = image.flatten()
+      axs[0].hist(temp, bins = binSize)
+      axs[0].title.set_text("Original Image")
 
     #Hashed Image
     objWithHash = withHash()
     hashedResult = objWithHash.withHash(height, width, image)
+    if decorator == 'histogram':
+      temp = hashedResult.flatten()
+      axs[1].hist(temp , bins = binSize)
+      axs[1].title.set_text("Hashed Image")
 
     #Now let's flatten the Hashed Result
     objFlatten = flatten()
     flattenedResult = objFlatten.adjustBars(hashedResult)
+    if decorator == 'histogram':
+      temp = flattenedResult.flatten()
+      axs[2].hist(temp , bins = binSize)
+      axs[2].title.set_text("Flattened Image")
 
-    #Converting numpy array to PIL image
-    
+    #Converting numpy array to PIL image    
     flattenedResult = flattenedResult.astype(np.uint8)
     arrayAsPIL = Image.fromarray(flattenedResult, mode='L')
 
     #Now let's randomize flattened image
     objRandomized = randomize()
     randomizedResult = objRandomized.randomize(arrayAsPIL)
+    if decorator == 'histogram':
+      temp = randomizedResult.flatten()
+      axs[3].hist(temp , bins = binSize)
+      axs[3].title.set_text("Randomized Image")
 
     #The final step xor the above image with key
     objFinal = final()
     result = objFinal.xor(randomizedResult)
+    if decorator == 'histogram':
+      temp = result.flatten()
+      axs[4].hist(temp , bins = binSize)
+      axs[4].title.set_text("Final Image")
 
     result = result.astype(np.uint8)
     png.from_array(result, mode="L").save("../../receiver/received/key.png")
+
+    if decorator:
+      plt.show()
