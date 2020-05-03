@@ -93,5 +93,6 @@ class decoder:
         wrd = ''
         COUNT = 8      
       i += 1
-      
-    print("Decoded Message = "+dM)
+    
+    print("Decoding - Message Decoded.            (2/2)")
+    print("Result   - Decoded Message - "+dM)

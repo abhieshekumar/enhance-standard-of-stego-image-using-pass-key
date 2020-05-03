@@ -12,6 +12,7 @@ def main():
   '''
   objDriver = driver()
   objDriver.driver()
+  print("Decoding - Key has been retrieved.     (1/2)")
 
 if __name__ == '__main__':
   main()

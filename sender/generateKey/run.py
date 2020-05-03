@@ -18,6 +18,7 @@ def main():
     objDriver.driver(None)
   else:
     objDriver.driver(decorator = sys.argv[1])
+  print("Encoding - The key has been generated. (2/2)")
 
 if __name__ == '__main__':
   main()
