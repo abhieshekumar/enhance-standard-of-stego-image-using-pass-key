@@ -22,5 +22,5 @@ class key:
   def getKey(self):   
 '''
     data = str(data)
-    data = string+"    return "+data
+    data = string+"    return "+data+"\n"
     return data

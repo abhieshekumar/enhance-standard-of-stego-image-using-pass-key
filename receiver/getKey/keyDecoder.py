@@ -15,4 +15,3 @@ class keyDecoder:
       (list) - A list with indexes to key.
     '''
     return list(zip(*np.where(matrix == 1)))
-    
