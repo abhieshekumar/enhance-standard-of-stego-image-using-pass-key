@@ -35,7 +35,7 @@ class decoder:
     isException = False
     i = 0
 
-    while True and i < height*width:
+    while i < height*width:
       px = i%width
       py = math.floor(i/width)
       if len(exceptionKey) == 0:

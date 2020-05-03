@@ -1,3 +1,5 @@
+import path
+from privateImage import privateImage
 import numpy as np
 
 class flatten:
@@ -15,15 +17,16 @@ class flatten:
     Returns:
       (uint8) - A 2D matrix with values flattened according to tolerance
     '''
-    return matrix
-    levels = 256
-    rows, cols = matrix.shape
+    privateImageObj = privateImage()
+    levels = privateImageObj.getPrivateImageLevels()
+    rows, cols = privateImageObj.getPrivateImageHeight(), privateImageObj.getPrivateImageWidth()
+
     matrix = matrix.flatten()
     
     freq = np.empty([levels])
     threshold = (rows*cols)//levels
 
-    tolerance = 0.5
+    tolerance = privateImageObj.getTolerance()
 
     for i in range(levels):
       freq[i] = np.sum(matrix == i)
@@ -69,5 +72,5 @@ class flatten:
           freq[tallestInd] = freq[tallestInd] - len(candidateLocations)
     
     matrix = matrix.reshape((rows, cols))
-    matrix = matix.astype(np.uint8)
+    matrix = matrix.astype(np.uint8)
     return matrix
