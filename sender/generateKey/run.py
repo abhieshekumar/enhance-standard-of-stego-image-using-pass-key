@@ -1,4 +1,5 @@
 from driver import driver
+import sys
 
 def main():
   '''
@@ -10,8 +11,13 @@ def main():
   Return:
     None
   '''
+
   objDriver = driver()
-  objDriver.driver()
+  
+  if len(sys.argv) == 1:
+    objDriver.driver(None)
+  else:
+    objDriver.driver(decorator = sys.argv[1])
 
 if __name__ == '__main__':
   main()
