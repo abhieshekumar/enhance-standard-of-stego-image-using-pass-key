@@ -13,7 +13,7 @@ class message:
     Returns:
       (str) The message which has to be embedded
     '''
-    return "helloWorld"
+    return "StayHomeStaySafe"
   
   def getMessageLength(self):
     '''
