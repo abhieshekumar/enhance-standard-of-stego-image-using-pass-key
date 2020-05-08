@@ -1,4 +1,4 @@
-# receiver
+# sender
 
 * *asset* - Contains the private image.
 * *encode* - Encodes the message.
