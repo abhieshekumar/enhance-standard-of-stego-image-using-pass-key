@@ -25,6 +25,6 @@
   * *tolerance* defined in *getTolerance()* in *metadata/private.py*,
   * *granularity* defined in *generateKey/randomize.py*, and
   * *nshuffle* define in *generateKey/randomize.py.
-  * You can also decide to have different cover image and the image used for generatinf key image.
+  * You can also decide to have different cover image and the image used for generating key image.
 
 * All of the above defined parameters can be modified on the sender as well the receiver side to tune the algorithm.
